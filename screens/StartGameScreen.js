@@ -1,10 +1,20 @@
-import { View, Pressable, TextInput } from "react-native";
+import { View, Pressable, TextInput, StyleSheet } from "react-native";
+import { PrimaryButton } from "../components/PrimaryButton";
 
 export const StartGameScreen = () => {
   return (
-    <View>
+    <View style={styles.inputContainer}>
       <TextInput />
-      BUTTONS
+      <PrimaryButton>Reset</PrimaryButton>
+      <PrimaryButton>Confirm</PrimaryButton>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  inputContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+});
