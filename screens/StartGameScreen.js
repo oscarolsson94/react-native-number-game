@@ -1,7 +1,23 @@
+import { useState } from "react";
 import { View, Pressable, TextInput, StyleSheet } from "react-native";
 import { PrimaryButton } from "../components/PrimaryButton";
 
 export const StartGameScreen = () => {
+  const [enteredNumber, setEnteredNumber] = useState("");
+
+  const numberInputHandler = (enteredText) => {
+    setEnteredNumber(enteredText);
+  };
+
+  const confirmInputHandler = () => {
+    const chosenNumber = parseInt(enteredNumber);
+
+    if (isNaN(chosenNumber || chosenNumber <= 0 || chosenNumber > 99)) {
+      //show alert
+      return;
+    }
+  };
+
   return (
     <View style={styles.inputContainer}>
       <TextInput
@@ -10,13 +26,15 @@ export const StartGameScreen = () => {
         keyboardType="number-pad"
         autoCapitalize="none"
         autoCorrect={false}
+        value={enteredNumber}
+        onChangeText={numberInputHandler}
       />
       <View style={styles.buttonsContainer}>
         <View style={styles.buttonContainer}>
           <PrimaryButton>Reset</PrimaryButton>
         </View>
         <View style={styles.buttonContainer}>
-          <PrimaryButton>Confirm</PrimaryButton>
+          <PrimaryButton onPress={confirmInputHandler}>Confirm</PrimaryButton>
         </View>
       </View>
     </View>
