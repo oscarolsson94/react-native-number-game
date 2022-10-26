@@ -1,10 +1,35 @@
-import { View, Text } from "react-native";
+import { View, StyleSheet, Image } from "react-native";
 import React from "react";
+import { Title } from "../components/ui/Title";
+import { Colors } from "../utils/colors";
 
 export const GameOverScreen = () => {
   return (
     <View>
-      <Text>GameOverScreen</Text>
+      <Title>GAME OVER!</Title>
+      <View style={styles.imageContainer}>
+        <Image
+          style={styles.image}
+          source={require("../assets/images/success.png")}
+        />
+      </View>
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  /* create circle image with view container */
+  imageContainer: {
+    width: 400,
+    height: 400,
+    borderRadius: 200,
+    borderWidth: 3,
+    borderColor: Colors.primary800,
+    overflow: "hidden",
+    margin: 36,
+  },
+  image: {
+    width: "100%",
+    height: "100%",
+  },
+});
