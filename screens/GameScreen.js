@@ -6,6 +6,7 @@ import { InstructionText } from "../components/ui/InstructionText";
 import { PrimaryButton } from "../components/ui/PrimaryButton";
 import { Title } from "../components/ui/Title";
 import { generateRandomBetween } from "../utils/helpers";
+import { Ionicons } from "@expo/vector-icons";
 
 let minBoundary = 1;
 let maxBoundary = 100;
@@ -53,12 +54,12 @@ export const GameScreen = ({ gameOverHandler, userNumber }) => {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={() => nextGuessHandler("lower")}>
-              -
+              <Ionicons name="md-remove" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={() => nextGuessHandler("higher")}>
-              +
+              <Ionicons name="md-add" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
