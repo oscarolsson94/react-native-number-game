@@ -1,4 +1,4 @@
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet, Image, Text } from "react-native";
 import React from "react";
 import { Title } from "../components/ui/Title";
 import { Colors } from "../utils/colors";
@@ -13,6 +13,10 @@ export const GameOverScreen = () => {
           source={require("../assets/images/success.png")}
         />
       </View>
+      <Text style={styles.summaryText}>
+        Your phone needed <Text style={styles.highLight}>X</Text> rounds to
+        guess the number <Text style={styles.highLight}>Y</Text>.
+      </Text>
     </View>
   );
 };
@@ -37,5 +41,14 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: "100%",
+  },
+  summaryText: {
+    fontFamily: "open-sans",
+    fontSize: 24,
+    color: "white",
+  },
+  highLight: {
+    fontFamily: "open-sans-bold",
+    color: Colors.primary500,
   },
 });
