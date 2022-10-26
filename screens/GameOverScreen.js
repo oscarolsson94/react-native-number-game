@@ -5,7 +5,7 @@ import { Colors } from "../utils/colors";
 
 export const GameOverScreen = () => {
   return (
-    <View>
+    <View style={styles.rootContainer}>
       <Title>GAME OVER!</Title>
       <View style={styles.imageContainer}>
         <Image
@@ -18,11 +18,17 @@ export const GameOverScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  rootContainer: {
+    flex: 1,
+    padding: 24,
+    justifyContent: "center",
+    alignItems: "center",
+  },
   /* create circle image with view container */
   imageContainer: {
-    width: 400,
-    height: 400,
-    borderRadius: 200,
+    width: 300,
+    height: 300,
+    borderRadius: 150,
     borderWidth: 3,
     borderColor: Colors.primary800,
     overflow: "hidden",
