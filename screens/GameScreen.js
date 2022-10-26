@@ -19,7 +19,7 @@ export const GameScreen = ({ gameOverHandler, userNumber }) => {
 
   useEffect(() => {
     if (currentGuess === userNumber) {
-      gameOverHandler();
+      gameOverHandler(guessRounds.length);
     }
   }, [currentGuess, userNumber, gameOverHandler]);
 
